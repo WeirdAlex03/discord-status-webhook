@@ -33,7 +33,8 @@ function embedFromIncident(incident) {
         .setColor(color)
         .setTimestamp(new Date(incident.started_at))
         .setURL(incident.shortlink)
-        .setTitle(incident.name);
+        .setTitle(incident.name)
+		.setFooter(`Incident ${incident.id}`);
     for (const update of incident.incident_updates.reverse()) {
         const updateDT = luxon.DateTime.fromISO(update.created_at);
         const timeString = updateDT.hasSame(incidentDT, 'day')

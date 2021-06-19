@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `CHANGELOG.md`
   - Log of changes made in my version of the project
+- `index.js`
+  - Now shows incident ID in embed footer
 
 ### Changed
 
