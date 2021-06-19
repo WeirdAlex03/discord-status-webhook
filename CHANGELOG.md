@@ -19,6 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `README.md`
   - My Changes section now prompts to check this file
 
+### Fixed
+
+- `README.md`
+  - Corrected instructions on initial run: incidents will not be saved if it fails to send the message
+
 ## [1.0.0: Initial Release] (2021-06-05)
 
 ### All changes from base repo
