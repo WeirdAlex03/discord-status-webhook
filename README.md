@@ -22,15 +22,4 @@ This project is derived from the JS complication of [almostSouji/discord-status-
 
 ### My changes
 
-The original repo provided the code in TypeScript and required the user to complie it to JavaScript to run it. I complied it on my computer and copy-pasted the resulting `.js` files into Replit. I had to make a few additional changes to let it run:
-
-- [`index.js`](index.js)
-  - `1-6`: Added a simple script to start a web server which can be pinged with [UptimeRobot](http://uptimerobot.com/) so Replit doesn't kill the process (this isn't needed if you have the Hacker plan and set this Repl to Always On)
-  - `17`: Changed data path for `incidentData`. The compiled JS was initially in the `/dist/` folder but is in root here, so the relative path to `/data/` had to be updated
-  - `95`: Added `void` in front of `setTimeout`. This simply removes an extra console output.
-- [`.replit`](.replit)
-  - The Replit config file, added by me so this can be run on Replit
-- [`.gitignore`](.gitignore)
-  - Cleared out some unnecessary enteries
-- [`README.md`](README.md)
-  - The original project didn't have a README, so I made one.
+Please see [`CHANGELOG.md`](CHANGELOG.md) for an overview of changes
