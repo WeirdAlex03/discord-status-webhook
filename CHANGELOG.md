@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] (2021-06-19)
+
 ### Added
 
 - `CHANGELOG.md`
-  - Log of changes made in my version of the project
+  - New file: Log of changes made in my version of the project
 - `index.js`
   - Now shows incident ID in embed footer
 
@@ -24,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `README.md`
   - Corrected instructions on initial run: incidents will not be saved if it fails to send the message
 
-## [1.0.0: Initial Release] (2021-06-05)
+## [1.0.0] (2021-06-05)
 
 ### All changes from base repo
 
@@ -41,5 +43,6 @@ The original repo provided the code in TypeScript and required the user to compl
 - `README.md`
   - The original project didn't have a README, so I made one.
 
-[Unreleased]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.0.0...HEAD
-[1.0.0: Initial Release]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v0.0.0...v1.0.0
+[Unreleased]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v0.0.0...v1.0.0
