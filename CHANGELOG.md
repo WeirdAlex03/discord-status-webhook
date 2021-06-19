@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `README.md`
   - My Changes section now prompts to check this file
 
-## [1.0.0]
+## [1.0.0: Initial Release] (2021-06-05)
 
 ### All changes from base repo
 
@@ -37,4 +37,4 @@ The original repo provided the code in TypeScript and required the user to compl
   - The original project didn't have a README, so I made one.
 
 [Unreleased]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v0.0.0...v1.0.0
+[1.0.0: Initial Release]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v0.0.0...v1.0.0
