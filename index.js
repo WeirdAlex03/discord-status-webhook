@@ -11,10 +11,10 @@ const tslib = require("tslib");
 const discord_js = require("discord.js");
 const node_fetch = tslib.__importDefault(require("node-fetch"));
 const luxon = require("luxon");
-const keyv = tslib.__importDefault(require("keyv"));
+const database = require("@replit/database");
 const constants = require("./constants");
 const logger = require("./logger");
-const incidentData = new keyv.default(`sqlite://data/data.sqlite`);
+const incidentData = new database();
 const hook = new discord_js.WebhookClient(process.env.DISCORD_WEBHOOK_ID, process.env.DISCORD_WEBHOOK_TOKEN);
 logger.logger.info(`Starting with ${hook.id}`);
 function embedFromIncident(incident) {
@@ -93,5 +93,5 @@ async function check() {
     }
 }
 void check();
-void setInterval(() => void check(), 60000 * 5);
+void setInterval(() => void check(), 60000 * 1);
 //# sourceMappingURL=index.js.map

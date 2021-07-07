@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Now using Replit's database (`@replit/database`) instead of the original `keyv` database
+
+### Added
+
+- `@replit/database` dependency
+
+### Removed
+
+- `keyv` and `@keyv/sqlite` dependencies
+- Deleted `data/` and `data/data.sqlite`
+
+### Planned
+
+- [x] Change to Replit database
+- [ ] Change `.env` to just webhook url, extract id and token in code
+- [ ] Reformat this file
+- [ ] Maybe check if database is empty and don't post to Discord on initial fill?
+
 ## [1.1.0] (2021-06-19)
 
 ### Added
@@ -43,6 +63,7 @@ The original repo provided the code in TypeScript and required the user to compl
 - `README.md`
   - The original project didn't have a README, so I made one.
 
-[Unreleased]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/WeirdAlex03/discord-status-webhook/compare/v0.0.0...v1.0.0
