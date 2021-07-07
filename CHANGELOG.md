@@ -18,7 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - `keyv` and `@keyv/sqlite` dependencies
-- Deleted `data/` and `data/data.sqlite`
+- `data/data.sqlite`, as that is no longer needed with Replit's database
+- `interfaces/StatusPage.js`, because I don't think that did anything to begin with
 
 ### Planned
 
