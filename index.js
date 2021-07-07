@@ -93,5 +93,5 @@ async function check() {
     }
 }
 void check();
-void setInterval(() => void check(), 60000 * 1);
+void setInterval(() => void check(), 60000 * 5);
 //# sourceMappingURL=index.js.map
