@@ -34,4 +34,3 @@ exports.logger = winston_1.createLogger({
     transports: new winston_1.transports.Console(),
     level: 'heartbeat',
 });
-//# sourceMappingURL=logger.js.map

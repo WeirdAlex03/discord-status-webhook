@@ -1,3 +1,5 @@
+"use strict";
+
 //Adds webserver for UptimeRobot to ping so Replit keeps this running
 var http = require('http');
 http.createServer(function (req, res) {
@@ -5,8 +7,6 @@ http.createServer(function (req, res) {
   res.end();
 }).listen(8080);
 
-"use strict";
-//Object.defineProperty(exports, "__esModule", { value: true });
 const tslib = require("tslib");
 const discord_js = require("discord.js");
 const node_fetch = tslib.__importDefault(require("node-fetch"));
@@ -17,6 +17,7 @@ const logger = require("./logger");
 const incidentData = new database();
 const hook = new discord_js.WebhookClient(process.env.DISCORD_WEBHOOK_ID, process.env.DISCORD_WEBHOOK_TOKEN);
 logger.logger.info(`Starting with ${hook.id}`);
+
 function embedFromIncident(incident) {
     const incidentDT = luxon.DateTime.fromISO(incident.started_at);
     const color = incident.status === 'resolved' || incident.status === 'postmortem'
@@ -49,6 +50,7 @@ function embedFromIncident(incident) {
     embed.setDescription(descriptionParts.join('\n'));
     return embed;
 }
+
 async function updateIncident(incident, messageID) {
     const embed = embedFromIncident(incident);
     try {
@@ -68,6 +70,7 @@ async function updateIncident(incident, messageID) {
         logger.logger.error(`error during hook sending on incident ${incident.id}\n`, error);
     }
 }
+
 async function check() {
     var _a;
     logger.logger.log('heartbeat', `❤`);
@@ -92,6 +95,6 @@ async function check() {
         logger.logger.error(`error during fetch and update routine:\n`, error);
     }
 }
+
 void check();
 void setInterval(() => void check(), 60000 * 5);
-//# sourceMappingURL=index.js.map

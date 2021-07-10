@@ -7,4 +7,3 @@ exports.EMBED_COLOR_YELLOW = '#faa61a';
 exports.EMBED_COLOR_ORANGE = '#f26522';
 exports.EMBED_COLOR_RED = '#f04747';
 exports.EMBED_COLOR_BLACK = '#737f8d';
-//# sourceMappingURL=constants.js.map
