@@ -15,8 +15,23 @@ const database = require("@replit/database");
 const constants = require("./constants");
 const logger = require("./logger");
 const incidentData = new database();
-const hook = new discord_js.WebhookClient(process.env.DISCORD_WEBHOOK_ID, process.env.DISCORD_WEBHOOK_TOKEN);
+const hook = setUpWebhook();
 logger.logger.info(`Starting with ${hook.id}`);
+
+function setUpWebhook() {
+	if (process.env.DISCORD_WEBHOOK_URL) {
+		logger.logger.info("Using URL");
+		var id = process.env.DISCORD_WEBHOOK_URL.slice(-87,-69);
+		var token = process.env.DISCORD_WEBHOOK_URL.slice(-68);
+		return new discord_js.WebhookClient(id, token);
+	} else if (process.env.DISCORD_WEBHOOK_ID && process.env.DISCORD_WEBHOOK_TOKEN) {
+		logger.logger.warn("Deprecation warning: ID and Token support will be removed soon, please use URL");
+		return new discord_js.WebhookClient(process.env.DISCORD_WEBHOOK_ID, process.env.DISCORD_WEBHOOK_TOKEN);
+	} else {
+		logger.logger.error("Unable to log in, please provide the Webhook URL");
+		process.exit(1);
+	}
+}
 
 function embedFromIncident(incident) {
     const incidentDT = luxon.DateTime.fromISO(incident.started_at);
