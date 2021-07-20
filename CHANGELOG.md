@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- Separate ID and Token environment varibles have been depreciated in favor of a single URL varbile.
+  - Please paste the full Webhook URL copied from Discord into the environment varible `DISCORD_WEBHOOK_URL`
+
 ### Changed
 
 - Now using Replit's database (`@replit/database`) instead of the original `keyv` database
@@ -24,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Planned
 
 - [x] Change to Replit database
-- [ ] Change `.env` to just webhook url, extract id and token in code
+- [x] Change `.env` to just webhook url, extract id and token in code
 - [ ] Reformat this file
 - [ ] Maybe check if database is empty and don't post to Discord on initial fill?
 
