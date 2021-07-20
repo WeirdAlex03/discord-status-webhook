@@ -20,15 +20,14 @@ logger.logger.info(`Starting with ${hook.id}`);
 
 function setUpWebhook() {
 	if (process.env.DISCORD_WEBHOOK_URL) {
-		logger.logger.info("Using URL");
 		var id = process.env.DISCORD_WEBHOOK_URL.slice(-87,-69);
 		var token = process.env.DISCORD_WEBHOOK_URL.slice(-68);
 		return new discord_js.WebhookClient(id, token);
 	} else if (process.env.DISCORD_WEBHOOK_ID && process.env.DISCORD_WEBHOOK_TOKEN) {
-		logger.logger.warn("Deprecation warning: ID and Token support will be removed soon, please use URL");
+		logger.logger.warn("DEPRECATION WARNING: ID and Token support will be removed soon. Please provide the webhook URL in the environment varible DISCORD_WEBHOOK_URL instead.");
 		return new discord_js.WebhookClient(process.env.DISCORD_WEBHOOK_ID, process.env.DISCORD_WEBHOOK_TOKEN);
 	} else {
-		logger.logger.error("Unable to log in, please provide the Webhook URL");
+		logger.logger.error("Unable to log in. Please provide the Webhook URL in the environment varible DISCORD_WEBHOOK_URL.");
 		process.exit(1);
 	}
 }
