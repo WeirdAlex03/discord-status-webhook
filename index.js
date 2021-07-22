@@ -110,5 +110,31 @@ async function check() {
     }
 }
 
+//If the databse is empty, loads the incidents into the database without posting messages
+async function fillDatabaseIfEmpty() {
+    var keys = await incidentData.list();
+    if (keys.length == 0) {
+        logger.logger.info('Database is empty, loading incidents w/o posting to webhook');
+        
+        try {
+            const json = (await node_fetch.default(`${constants.API_BASE}/incidents.json`).then((r) => r.json()));
+            const { incidents } = json;
+            for (const incident of incidents.reverse()) {
+                logger.logger.log('new', `new incident: ${incident.id}`);
+                await incidentData.set(incident.id, {
+                    incidentID: incident.id,
+                    lastUpdate: luxon.DateTime.now().toISO(),
+                    resolved: incident.status === 'resolved' || incident.status === 'postmortem',
+                });
+            }
+        }
+        catch (error) {
+            logger.logger.error(`error during fetch and update routine:\n`, error);
+        }
+        
+    }
+}
+
+void fillDatabaseIfEmpty();
 void check();
 void setInterval(() => void check(), 60000 * 5);

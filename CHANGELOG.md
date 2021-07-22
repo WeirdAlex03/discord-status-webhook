@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `@replit/database` dependency
+- Now checks if the database is empty when started and, if so, fills the database without posting to the webhook to prevent a spam of 50 messages
 
 ### Removed
 
@@ -31,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [x] Change to Replit database
 - [x] Change `.env` to just webhook url, extract id and token in code
 - [ ] Reformat this file
-- [ ] Maybe check if database is empty and don't post to Discord on initial fill?
+- [x] Maybe check if database is empty and don't post to Discord on initial fill?
 
 ## [1.1.0] (2021-06-19)
 
