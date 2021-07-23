@@ -33,7 +33,6 @@ function setUpWebhook() {
 }
 
 function embedFromIncident(incident) {
-    const incidentDT = luxon.DateTime.fromISO(incident.started_at);
     const color = incident.status === 'resolved' || incident.status === 'postmortem'
         ? constants.EMBED_COLOR_GREEN
         : incident.impact === 'critical'
@@ -51,10 +50,7 @@ function embedFromIncident(incident) {
         .setTitle(incident.name)
 		.setFooter(`Incident ${incident.id}`);
     for (const update of incident.incident_updates.reverse()) {
-        const updateDT = luxon.DateTime.fromISO(update.created_at);
-        const timeString = updateDT.hasSame(incidentDT, 'day')
-            ? updateDT.toUTC().toFormat('HH:mm ZZZZ')
-            : updateDT.toUTC().toFormat('yyyy/LL/dd HH:mm ZZZZ');
+        const timeString = `<t:${Math.floor(updateDT.toSeconds())}:R>`;
         embed.addField(`${update.status.charAt(0).toUpperCase()}${update.status.slice(1)} (${timeString})`, update.body);
     }
     const descriptionParts = [`• Impact: ${incident.impact}`];

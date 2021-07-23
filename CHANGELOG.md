@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Now using Replit's database (`@replit/database`) instead of the original `keyv` database
+- Now using Discord's new timestamp feature ([copied from upstream](https://github.com/almostSouji/discord-status-webhook/commit/e853ef1ba097d81b4be8491568541ffcb893d4ab))
 
 ### Added
 
