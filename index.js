@@ -50,7 +50,8 @@ function embedFromIncident(incident) {
         .setTitle(incident.name)
 		.setFooter(`Incident ${incident.id}`);
     for (const update of incident.incident_updates.reverse()) {
-        const timeString = `<t:${Math.floor(updateDT.toSeconds())}:R>`;
+		const updateDT = luxon.DateTime.fromISO(update.created_at);
+        const timeString = `<t:${Math.floor(updateDT.toSeconds())}:t>/<t:${Math.floor(updateDT.toSeconds())}:R>`;
         embed.addField(`${update.status.charAt(0).toUpperCase()}${update.status.slice(1)} (${timeString})`, update.body);
     }
     const descriptionParts = [`• Impact: ${incident.impact}`];
